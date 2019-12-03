@@ -18,7 +18,7 @@ this can be fixed with the following steps
 
 # Usage
 
-`docker run -tid --restart=always --mount type=bind,source=/home/$USER/,target=/home/monero/ -p 18080:18080 -p 18081:18081 --name=monerod javihache/monero-full-node`
+`docker run -tid --restart=always --mount type=bind,source=/home/$USER/.bitmonero,target=/home/monero/.bitmonero -p 18080:18080 -p 18081:18081 --name=monerod javihache/monero-full-node`
 
 ## Updates
 Manual Way
