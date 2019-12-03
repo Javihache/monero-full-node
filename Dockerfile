@@ -23,7 +23,7 @@ WORKDIR /home/monero
 COPY --chown=monero:monero --from=build /root/monerod /home/monero/monerod
 
 # blockchain loaction
-VOLUME /home/monero/.bitmonero
+#VOLUME /home/monero/.bitmonero
 
 EXPOSE 18080 18081
 
