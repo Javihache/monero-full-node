@@ -20,7 +20,7 @@ RUN useradd -ms /bin/bash monero && mkdir -p /home/monero/.bitmonero && chown -R
 USER monero
 WORKDIR /home/monero
 
-COPY --chown=monero:monero --from=build /root/monerod /home/monero/monerod
+COPY --chown=monero:monero --from=build /root/monero* /home/monero/
 
 # blockchain loaction
 #VOLUME /home/monero/.bitmonero
