@@ -11,8 +11,8 @@ RUN curl https://downloads.getmonero.org/cli/monero-linux-x64-v$MONERO_VERSION.t
   echo "$MONERO_SHA256  monero-linux-x64-v$MONERO_VERSION.tar.bz2" | sha256sum -c - &&\
   tar -xvf monero-linux-x64-v$MONERO_VERSION.tar.bz2 &&\
   rm monero-linux-x64-v$MONERO_VERSION.tar.bz2 &&\
-  cp -r ./monero-x86_64-linux-gnu-v$MONERO_VERSION/* . &&\
-  rm -r monero-x86*
+  cp ./monero-x86_64-linux-gnu-v$MONERO_VERSION/monerod . &&\
+  rm -r monero-*
   
 FROM ubuntu:18.04
 
@@ -20,7 +20,7 @@ RUN useradd -ms /bin/bash monero && mkdir -p /home/monero/.bitmonero && chown -R
 USER monero
 WORKDIR /home/monero
 
-COPY --chown=monero:monero --from=build /root/ /home/monero/
+COPY --chown=monero:monero --from=build /root/monerod /home/monero/monerod
 
 # blockchain loaction
 #VOLUME /home/monero/.bitmonero
