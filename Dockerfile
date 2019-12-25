@@ -28,4 +28,4 @@ COPY --chown=monero:monero --from=build /root/monerod /home/monero/monerod
 EXPOSE 18080 18081
 
 ENTRYPOINT ["./monerod"]
-CMD ["--non-interactive", "--restricted-rpc", "--rpc-bind-ip=144.91.76.175", "--confirm-external-bind", "--prune-blockchain"]
+CMD ["--non-interactive", "--restricted-rpc", "--rpc-bind-ip=144.91.76.175", "--confirm-external-bind"]
