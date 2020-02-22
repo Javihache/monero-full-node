@@ -27,4 +27,4 @@ COPY --chown=monero:monero --from=build /root/monerod /home/monero/monerod
 
 EXPOSE 18080 18081
 
-ENTRYPOINT ["monerod", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=18080", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=18081", "--non-interactive", "--restricted-rpc". "--confirm-external-bind"], "--prune-blockchain"]
+ENTRYPOINT ["./monerod", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=18080", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=18081", "--non-interactive", "--restricted-rpc". "--confirm-external-bind"], "--prune-blockchain"]
